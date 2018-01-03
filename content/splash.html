@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+{% set index=True %}
+
+
+{# ================== Header Material ================= #}
+
+{% set lecture_title="Rubiks Cube" %}
+{% set lead="
+Notes and experiments with Rubiks Cubes, 3x3 and 4x4.
+" %}
+{% set link="https://github.com/charlesreid1/rubiks-notes" %}
+{% include 'lecture_head.html' %}
+
+
+
+{# ========= topic 1 =========== #}
+
+{% set anchor="topic-1" %}
+{% set cluster="Rubiks Cube Basics" %}
+{% include 'notes_clustertitle.html' %}
+
+<div class="row">
+
+    {% set href="/notebooks/RC_1_CubeManipulation.html" %}
+    {% set imgsrc="http://placehold.it/700x400" %}
+    {% set nb="Rubiks Cube Basics" %}
+    {% set card="Demonstration of how to create and manipulate virtual Rubiks Cubes." %}
+    {% include 'notes_notebook.html' %}
+
+</div>
+
+
+
+{# ========= topic 2 =========== #}
+
+{% set anchor="topic-2" %}
+{% set cluster="Generating Permutations for Cube Rotations" %}
+{% include 'notes_clustertitle.html' %}
+
+<div class="row">
+
+    {% set href="/notebooks/RC_2_KnuthPermutationM.html" %}
+    {% set imgsrc="http://placehold.it/700x400" %}
+    {% set nb="Knuth's Algorithm M" %}
+    {% set card="Using Knuth's Algorithm M to generate permutations of moves,
+                and find rotational duplicates." %}
+    {% include 'notes_notebook.html' %}
+
+</div>
+
+
+
+
+{# ========= topic 3 =========== #}
+
+{% set anchor="topic-3" %}
+{% set cluster="Generating Permutations for Cube Rotations" %}
+{% include 'notes_clustertitle.html' %}
+
+<div class="row">
+
+    {% set href="/notebooks/RC_3_CountingPermutations.html" %}
+    {% set imgsrc="http://placehold.it/700x400" %}
+    {% set nb="Knuth's Algorithm M" %}
+    {% set card="Using Knuth's Algorithm M to generate permutations of moves,
+                and find rotational duplicates." %}
+    {% include 'notes_notebook.html' %}
+
+</div>
+
+
+
+
+
+{# ========= topic 4 =========== #}
+
+{% set anchor="topic-4" %}
+{% set cluster="Counting Cycles" %}
+{% include 'notes_clustertitle.html' %}
+
+<div class="row">
+
+    {% set href="/notebooks/RC_4_CycleCounts.html" %}
+    {% set imgsrc="http://placehold.it/700x400" %}
+    {% set nb="Counting Cycles" %}
+    {% set card="Applying a sequence repeatedly to a cube will 
+                eventually result in a solved cube - always.
+                This uses virtual cubes to analyze the number of 
+                times a sequence of moves must be applied to return
+                a solved cube back to solved state." %}
+    {% include 'notes_notebook.html' %}
+
+</div>
+
+
+
+
+{# ================ End Page Content ================== #}
+
+{% endblock %}
