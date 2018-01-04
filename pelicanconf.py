@@ -16,11 +16,11 @@ import glob
 # -----------------------
 # SET THIS!!!!!1!11!!!!!!!!!!
 
-# Local viewing:
-SITEURL = ''
+### # Local viewing:
+### SITEURL = ''
 
-### # Github hosting
-### SITEURL = 'rubiks-notes'
+# Github hosting
+SITEURL = 'rubiks-notes'
 
 # OK TNX BYE
 # ----------------------
