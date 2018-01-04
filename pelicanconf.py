@@ -19,9 +19,6 @@ import glob
 ## Local viewing:
 SITEURL = ''
 
-# Github hosting
-#SITEURL = '/rubiks-notes'
-
 # OK TNX BYE
 # ----------------------
 
