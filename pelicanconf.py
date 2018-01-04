@@ -20,7 +20,7 @@ import glob
 SITEURL = ''
 
 # Github hosting
-SITEURL = 'rubiks-notes'
+SITEURL = '/rubiks-notes'
 
 # OK TNX BYE
 # ----------------------
