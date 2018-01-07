@@ -11802,7 +11802,24 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">7</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="mi">11</span><span class="o">*</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -11837,17 +11854,17 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Permutations-of-a-4x4-Cube">Permutations of a 4x4 Cube<a class="anchor-link" href="#Permutations-of-a-4x4-Cube">&#182;</a></h2><p>On a 4x4 cube, we use the same technique as the 3x3, counting permutations due to both placement and orientation of each type of piece. Now each face has four corner pieces, four double edges for eight edge pieces, and four corners. Counting:</p>
 <ul>
-<li>Placement: 8 corners being placed, for total of 8!</li>
-<li>Placement: 12 left-double-edge pieces that can go in 24 possible double-edge locations, for a total of \dfrac{24!}{12!}</li>
-<li>Placement: 12 right-double-edge pieces that can go in 24 possible double-edge locations, for a total of \dfrac{24!}{12!}</li>
-<li>Placement: 24 center squares, which can be arranged in any configuration</li>
-<li>Orientation: 3 orientations are possible on the 8 corners, placement of 7 determines the last, for total of 3^7</li>
+<li>Placement: 8 corners being placed, for total of $8!$</li>
+<li>Placement: 12 left-double-edge pieces that can go in 24 possible double-edge locations, for a total of $\dfrac{24!}{12!}$</li>
+<li>Placement: 12 right-double-edge pieces that can go in 24 possible double-edge locations, for a total of $\dfrac{24!}{12!}$</li>
+<li>Placement: 24 center squares, which can be arranged in any configuration, for $24!$</li>
+<li>Orientation: 3 orientations are possible on the 8 corners, placement of 7 determines the last, for total of $3^7$</li>
 <li>Orientation: interestingly, the position of a double-edge piece uniquely determines its orientation. If a left-double-edge piece is placed in a left-double-edge position, it will be oriented "right-side up". If a left-double-edge piece is placed in a right-double-edge position, it will be oriented "upside-down". And likewise for right-double-edge positions. That means that if a double edge cubie is made part of a double edge, it has only two possible positions on that double edge. Therefore, there are 0 degrees of freedom due to orientation of double edge pieces.</li>
 <li>Orientation: Like the double-edge pieces, the center squares get 0 degrees of freedom due to orientation. Distributing 24 center squares among 24 center square positions uniquely determines the state of those center squares.</li>
 </ul>
 <p>The grand total, then, is:</p>
 <p>$$
-T = 3^7 \times 8! \times \left( \dfrac{24!}{12!} \right)^2 = 147947189226886589978930309391974400000 \sim 10^{38}
+T = 3^7 \times 8! \times 24! \times \left( \dfrac{24!}{12!} \right)^2 = 91793597096746925044380089227138852984017051539472384000000000 \sim 10^{61}
 $$</p>
 
 </div>
@@ -11855,10 +11872,10 @@ $$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">7</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">factorial</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">12</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">7</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">factorial</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">12</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11875,7 +11892,7 @@ $$</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1.479471892268866e+38
+<pre>9.179359709674693e+61
 </pre>
 </div>
 </div>
