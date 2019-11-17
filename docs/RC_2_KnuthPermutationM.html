@@ -11804,7 +11804,6 @@ $$</p>
 <p><strong>M4.</strong> [Carry if necessary.] If $a_j = m_j - 1$, set $a_j \rightarrow 0, j \rightarrow j-1$ and repeat this step.</p>
 <p><strong>M5.</strong> [Increase, unless done.] If $j=0$, terminate algorithm. Otherwise set $a_j = a_j + 1$ and go back to step $M2$.</p>
 <hr>
-<p>Unfortunately, this pseudocode takes some work to translate. Fortunately, that's already done in the method below.</p>
 
 </div>
 </div>
@@ -11813,7 +11812,8 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Implementing-Algorithm-M">Implementing Algorithm M<a class="anchor-link" href="#Implementing-Algorithm-M">&#182;</a></h2><p>The method below implements Algorithm M in Python to generate random sequences on a 4x4 Rubik's Cube (called the Rubik's Revenge, or RR for short). The RR cube has six faces that can each be rotated clockwise or counterclockwise by a single layer, denoted by the uppercase letters U, D, B, F, L, R (up, down, back, front, left, right, respectively) for clockwise rotations and U', D', B', F', L', R' for counterclockwise rotations, for 12 total moves.</p>
+<h2 id="Implementing-Algorithm-M">Implementing Algorithm M<a class="anchor-link" href="#Implementing-Algorithm-M">&#182;</a></h2><p>Unfortunately, this pseudocode takes some work to translate. Fortunately, that's already done in the method below.</p>
+<p>The method below implements Algorithm M in Python to generate random sequences on a 4x4 Rubik's Cube (called the Rubik's Revenge, or RR for short). The RR cube has six faces that can each be rotated clockwise or counterclockwise by a single layer, denoted by the uppercase letters U, D, B, F, L, R (up, down, back, front, left, right, respectively) for clockwise rotations and U', D', B', F', L', R' for counterclockwise rotations, for 12 total moves.</p>
 <p>However, on a 4x4 cube, we can also rotate <em>two</em> layers at a time. (That's the limit; moving three layers at a time is equivalent to a reversed rotation of the remaining single layer.) This type of rotation is denoted with a "w".</p>
 <p>Thus, rotating the top two layers of each of the six faces clockwise is denoted Uw, Dw, Bw, Fw, Lw, Rw, and counterclockwise rotations are denoted Uw', Dw', Bw', Fw', Lw', Rw', for 12 additional moves.</p>
 <p>We have one more type of move, which is where the second layer only is removed. This type of move is denoted with 2, and the face whose second layer is being rotated, for six moves: 2U, 2D, 2B, 2F, 2L, 2R. The prime notation denotes again a counterclockwise rotation, for an additional six moves: 2U', 2D', 2B', 2F', 2L', 2R'. This yields another 12 moves.</p>

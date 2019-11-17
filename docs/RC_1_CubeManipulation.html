@@ -12136,6 +12136,171 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Implementing-second-layer-turns">Implementing second-layer turns<a class="anchor-link" href="#Implementing-second-layer-turns">&#182;</a></h2><p>There are a few moves that the cube will execute, but none implement a second-layer turn.</p>
+<p>2U, for example, implements a rotation of the upper two layers, rather than only the second upper layer. But that's also what Uw does, so this is redundant.</p>
+<p>U2 implements two rotations of the U layer, so this doesn't do what we want either.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="n">get_cube</span><span class="p">()</span>
+<span class="n">rr</span><span class="o">.</span><span class="n">print_cube</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">rr</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s2">&quot;2U&quot;</span><span class="p">)</span>
+<span class="n">rr</span><span class="o">.</span><span class="n">print_cube</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+
+
+
+
+
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+
+<span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span>  <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> 
+<span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span>  <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The kludge solution is to implement the clockwise rotation of the second layer by rotating the top two layers clockwise, then the top layer counterclockwise:</p>
+<p>Uw U'</p>
+<p>Note that this portion of the code (<code>rotate()</code> method in <code>__init__.py</code> of rubiksnnnsolver library) is non-trivial to modify, so instead we just replace any <code>2U</code> in the sequence with <code>Uw U'</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rr</span> <span class="o">=</span> <span class="n">get_cube</span><span class="p">()</span>
+<span class="n">rr</span><span class="o">.</span><span class="n">print_cube</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">rr</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s2">&quot;Uw&quot;</span><span class="p">)</span>
+<span class="n">rr</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="s2">&quot;U&#39;&quot;</span><span class="p">)</span>
+<span class="n">rr</span><span class="o">.</span><span class="n">print_cube</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+
+
+
+
+
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+         <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> <span class="ansi-white-intense-fg">U</span> 
+
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span>  <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+<span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span> <span class="ansi-black-intense-fg">L</span>  <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span> <span class="ansi-green-intense-fg">F</span>  <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span> <span class="ansi-red-intense-fg">R</span>  <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> <span class="ansi-blue-intense-fg">B</span> 
+
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+         <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> <span class="ansi-yellow-intense-fg">D</span> 
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
